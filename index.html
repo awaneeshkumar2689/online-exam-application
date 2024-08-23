@@ -1,0 +1,144 @@
+<html>
+<head><title>login form</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<style type="text/css">
+
+form{
+margin-top:12rem;
+margin-left:24rem;
+margin-right:24rem;
+margin:0 auto;
+color:red;
+text-align:center;
+background-color:powderblue;
+font-family:helvetica,sans-serif;
+padding-top:40px;
+padding-left:80px;
+padding-right:80px;
+width:470px;
+}
+input{
+border-radius:5px;
+text-align:center;
+padding:12px 12px 12px 5px;
+width:320px;
+border:5px solid grey;
+font-size:30px;
+background-color:yellow;
+color:red;
+margin-right:20px;
+}
+label{
+width:200px;
+position:relative;
+top:12px;
+float:left;
+}
+.mb-4
+{
+width:550px;
+margin: 0 auto;
+background-color:powderblue;
+
+}
+.btn
+{
+margin-top:30px;
+
+}
+.check{
+margin-top:20px;
+}
+div{
+text-align:center;
+
+
+}
+
+</style>
+
+
+
+
+
+</head>
+
+
+
+
+<body>
+<legend  style="text-align:center">LOGIN FORM</LEGEND>
+<form>
+
+<div class="mb-4">
+  <div class="mb-3">
+    <label for="emailAddress" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="Password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="check" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <a href="instruction.html"> <button type="submit" class="btn"> Submit </button>Read the Instructions</a>
+  
+ </div> 
+
+</form>
+
+<script type="text/javascript ">
+   function isEmail(email) {
+  
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  
+                return regex.test(email);
+                
+            }
+$("#submitButton").click(function(){
+var fieldMissing = "";
+var errorMessage = "";
+if($("#email").val() == "")
+{
+fieldMissing += "<br>Email";
+}
+
+if($("#password").val() == "")
+{
+fieldMissing +=  "<br>password";
+}
+
+
+if(fieldMissing != "")
+{
+errorMessage += "<p>the following field is missing:" +
+ fieldMissing;
+}
+if (isEmail($("#email").val()) == false) {
+                    
+                    errorMessage += "<p>Your email address is not valid</p>";
+                    
+                }
+
+ 
+if(errorMessage != "")
+{
+$("#errorMessage").html(errorMessage);
+}
+else
+{
+$("#successMessage").show();
+$("#errorMessage").hide();
+
+}
+});
+</script>
+<?php
+
+?>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><title>instruction</title><style type="text/css">
+h3{
+
+color:red;
+}
+h4{
+color:green;
+}
+
+
+</style></head>
+<body>
+<h3>Please Read all the Instructions&nbsp;</h3>
+<h4><span>1.There are 11 Questions.</span><br>
+
+<span>2.There is no negative marking.</span><br>
+<span>3.All questiion carry 1 mark.</span><br>
+<span>4.There is only one possible correct Answer.</span><br>
+</h4>
+<p>Click on checkbox if you have read all the instruction</p>
+<form method="post">
+  <div>
+<label for="myChec">I have read all the Instructions:</label> 
+<input type="checkbox" id="myChec" value="1" onclick="terms_changed(this)">
+</div>
+<p id="text" style="display:none">You have read all the Instruction!</p>
+<p id="demo"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<div>
+
+  <a href="online_exam_application.html" id="myLink">START EXAM</a>
+</div>
+</form>
+
+<script>
+debugger;
+function terms_changed(termsCheckBox)
+
+{
+
+
+if(termsCheckBox.checked)
+{
+  
+ // document.getElementById("mylink").disabled= false;
+
+ function enableLink() {
+  var link = document.getElementById("myLink");
+  link.href = "online_exam_application.html";
+  link.style.pointerEvents = "auto";
+  link.style.color = ""; // Reset color
+}
+enableLink();
+}
+else{
+ 
+// document.getElementById("mylink").disabled= true;
+function disableLink() {
+  var link = document.getElementById("myLink");
+  link.href = "javascript:void(0)";
+  link.style.pointerEvents = "none";
+  link.style.color = "gray"; // Optional: Change color to indicate it's disabled
+}
+disableLink();
+}
+}
+</script>
+
+
+
+
+</body>
+</html>
